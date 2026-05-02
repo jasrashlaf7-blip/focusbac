@@ -1,33 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FocusBac</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djasser Market Manager - Elevate Your Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        accent: {
+                            gold: '#D4AF37',
+                            emerald: '#10B981',
+                            blue: '#3B82F6',
+                        }
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60A5FA, #34D399, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .video-container {
+            position: relative;
+            box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.3);
+        }
+        .video-container::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #3B82F6, transparent, #10B981);
+            z-index: -1;
+            border-radius: 1.5rem;
+            opacity: 0.5;
+        }
+    </style>
 </head>
-<body>
+<body class="font-body antialiased">
 
-<div class="app">
-  <h1 id="title">FocusBac</h1>
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-600/10 blur-[120px]"></div>
+    </div>
 
-  <select id="language">
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-    <option value="ar">العربية</option>
-  </select>
+    <!-- Navigation -->
+    <nav class="px-6 py-8 max-w-7xl mx-auto flex justify-between items-center relative z-10">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-display font-extrabold text-xl">D</span>
+            </div>
+            <span class="font-display font-bold text-2xl tracking-tight">DJASSER <span class="text-emerald-400">MARKET</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400 uppercase tracking-widest">
+            <span class="text-white cursor-default">Solutions</span>
+            <span class="hover:text-white transition-colors cursor-default">Marketplace</span>
+            <span class="hover:text-white transition-colors cursor-default">Compliance</span>
+        </div>
+    </nav>
 
-  <h2 id="subtitle">Study Timer</h2>
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left Content -->
+            <div class="lg:col-span-6 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Now available in Algeria
+                </div>
+                
+                <h1 class="font-display text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">
+                    Conquer Your <br/>
+                    <span class="text-gradient">Daily Challenges</span>
+                </h1>
+                
+                <p class="text-xl text-slate-400 leading-relaxed max-w-xl">
+                    Algerian store owners, elevate your business with <span class="text-white font-semibold">DJASSER MARKET MANAGER</span>. Effortlessly track stock, manage sales, and ensure total fiscal compliance in one elegant platform.
+                </p>
 
-  <div id="timer">25:00</div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button class="px-8 py-4 bg-white text-primary font-bold rounded-2xl hover:bg-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-xl shadow-white/5">
+                        Start Managing Now
+                    </button>
+                    <button class="px-8 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:bg-white/5 transition-all duration-300">
+                        View Demo
+                    </button>
+                </div>
 
-  <div class="buttons">
-    <button id="start">Start</button>
-    <button id="reset">Reset</button>
-  </div>
+                <!-- Trust Badges -->
+                <div class="pt-8 flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all">
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold">1,500+</span>
+                        <span class="text-xs uppercase tracking-widest font-semibold">Stores Active</span>
+                    </div>
+                    <div class="h-10 w-[1px] bg-slate-700"></div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold">100%</span>
+                        <span class="text-xs uppercase tracking-widest font-semibold">Fiscal Ready</span>
+                    </div>
+                </div>
+            </div>
 
-  <p id="note">Focus for 25 minutes</p>
-</div>
+            <!-- Right Content (Video) -->
+            <div class="lg:col-span-6">
+                <div class="video-container rounded-3xl overflow-hidden glass p-2 md:p-4">
+                    <div class="rounded-2xl overflow-hidden aspect-video bg-black flex items-center justify-center">
+                        <video 
+                            src='https://opal.google/board/blobs/aa8a1f81-0b38-484f-8976-3a8dca1e4662' 
+                            alt='media_1' 
+                            class="w-full h-full object-cover"
+                            controls 
+                            autoplay 
+                            muted 
+                            loop
+                        ></video>
+                    </div>
+                </div>
+                
+                <!-- Floating Card -->
+                <div class="hidden md:block absolute -bottom-10 right-10 animate-float">
+                    <div class="glass p-6 rounded-2xl shadow-2xl border border-white/20">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Compliance Active</div>
+                                <div class="text-xs text-slate-400">Algerian Fiscal Shield Enabled</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Feature Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass group p-8 rounded-[2rem] hover:bg-white/[0.05] transition-all duration-500 border-t border-white/10">
+                <div class="mb-6 w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Effortless Stock</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Automate your inventory lifecycle. Track stock levels in real-time, get low-stock alerts, and manage suppliers with precision.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass group p-8 rounded-[2rem] hover:bg-white/[0.05] transition-all duration-500 border-t border-white/10">
+                <div class="mb-6 w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Seamless Sales</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Lightning-fast checkout experience. Manage multiple payment methods and customer loyalty programs directly from your dashboard.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass group p-8 rounded-[2rem] hover:bg-white/[0.05] transition-all duration-500 border-t border-white/10">
+                <div class="mb-6 w-14 h-14 bg-accent-gold/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Fiscal Compliance</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Designed for Algerian regulations. Generate compliant invoices, tax reports, and audit logs with a single click.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA / Social Proof -->
+    <section class="max-w-5xl mx-auto px-6 pb-24 text-center">
+        <div class="glass p-12 rounded-[3rem] space-y-8 relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[80px] rounded-full"></div>
+            
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold">Ready to transform your business?</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                Join thousands of store owners across Algiers, Oran, and Constantine who trust Djasser.
+            </p>
+            <div class="flex justify-center">
+                <button class="group flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl">
+                    Get Started Free
+                    <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple animation trigger for page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.glass');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>
